@@ -14,3 +14,13 @@ script:
 
 after_success:
   - echo "Test Success"
+
+deploy:
+  provider: elasticbeanstalk
+  region: "us-east-1"
+  app: "docker-react-app-kwangwoo"
+  env: "Dockerreactappkwangwoo-env"
+  bucket_name: "elasticbeanstalk-us-east-1-359722493169"
+  bucket_path: "docker-react-app-kwangwoo"
+  on:
+    branch: master
